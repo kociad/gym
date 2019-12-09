@@ -1,3 +1,5 @@
+from . import app
+
 @app.route('/')
-def index()
+def index():
     return "Toto je index"
