@@ -1,8 +1,9 @@
 from datetime import datetime
-from pony.orm import *
+from pony.orm import PrimaryKey, Required, Optional, Database, Set
 
 
 db = Database()
+db.bind(provider='sqlite', filename='./databaze.sqlite', create_db=True)
 
 
 class Uzivatel(db.Entity):
@@ -27,3 +28,5 @@ class Sal(db.Entity):
     kapacita = Required(int)
     Dostupnost = Optional(bool)
     rezervaces = Set(Rezervace)
+
+db.generate_mapping(create_tables=True)

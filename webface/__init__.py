@@ -5,3 +5,4 @@ app.secret_key = b'EEE, nejlepe os.urandom(24)'
 Misaka(app)
 
 from . import routes
+from . import models
